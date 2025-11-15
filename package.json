@@ -1,0 +1,16 @@
+{
+  "name": "social-platform",
+  "private": true,
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "install-all": "npm install --workspaces",
+    "start:dev": "concurrently \"npm:dev --workspace=server\" \"npm:dev --workspace=web\"",
+    "build": "npm --workspace=web run build && npm --workspace=server run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
